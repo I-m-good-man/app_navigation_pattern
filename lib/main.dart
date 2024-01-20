@@ -11,7 +11,7 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialApp.router(
+    return MaterialApp.router(debugShowCheckedModeBanner: false,
       routeInformationParser: AppNavigation.routeInformationParser,
       routerDelegate: AppNavigation.routerDelegate(ref: ref),
     );
