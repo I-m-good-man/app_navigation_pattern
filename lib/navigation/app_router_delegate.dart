@@ -11,16 +11,7 @@ class NavigatorObjectKey extends GlobalObjectKey<NavigatorState> {
   const NavigatorObjectKey(super.value);
 }
 
-class UndefinedAppPath implements Exception {
-  @override
-  String toString() {
-    return 'AppPath "${undefinedAppPath.runtimeType}" is not bounded with any pages in app';
-  }
 
-  final AppPath undefinedAppPath;
-
-  UndefinedAppPath({required this.undefinedAppPath});
-}
 
 class AppRouterDelegate extends RouterDelegate<AppRouteConfig>
     with PopNavigatorRouterDelegateMixin, ChangeNotifier {
@@ -56,7 +47,7 @@ class AppRouterDelegate extends RouterDelegate<AppRouteConfig>
             LaunchPath => const LaunchPage(),
             HomePath => const HomePage(),
             UndefinedPath => const UndefinedPage(),
-            _ => throw UndefinedAppPath(undefinedAppPath: appPath)
+            _ => throw UnexpectedAppPathException(undefinedAppPath: appPath)
           })
       ],
     );
