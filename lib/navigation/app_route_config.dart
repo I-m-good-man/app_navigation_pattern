@@ -30,6 +30,10 @@ class AppRouteConfigStateNotifier extends StateNotifier<AppRouteConfig> {
   void pushRoute({required AppPath appPath}) {
     state = state.copyWith(routeConfig: state.routeConfig..add(appPath));
   }
+
+  void setNewState({required AppRouteConfig newState}){
+    state = newState;
+  }
 }
 
 typedef NavigationProvider
