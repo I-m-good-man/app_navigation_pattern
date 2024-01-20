@@ -31,8 +31,25 @@ class AppRouteConfigStateNotifier extends StateNotifier<AppRouteConfig> {
     state = state.copyWith(routeConfig: state.routeConfig..add(appPath));
   }
 
-  void setNewState({required AppRouteConfig newState}){
+  void setNewState({required AppRouteConfig newState}) {
     state = newState;
+  }
+
+  void moveNextRoute() {
+    AppPath currentAppPath = state.routeConfig.last;
+    AppPath nextAppPath = switch (currentAppPath.runtimeType) {
+      LaunchPath => HomePath(),
+      HomePath => LaunchPath(),
+      UndefinedPath => LaunchPath(),
+      _ => throw UnexpectedAppPathException(undefinedAppPath: currentAppPath)
+    };
+    state = state.copyWith(routeConfig: state.routeConfig..add(nextAppPath));
+  }
+
+  void movePreviousRoute() {
+    if (state.routeConfig.length > 1) {
+      popRoute();
+    }
   }
 }
 

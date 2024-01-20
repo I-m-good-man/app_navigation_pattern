@@ -1,3 +1,4 @@
+import 'package:app_navigation_pattern/widgets/app_bar_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,10 +12,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: const Text('HomePage'),
-      ),
+      appBar: AppBarWidget(),
     );
   }
 }

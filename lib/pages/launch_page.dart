@@ -1,3 +1,4 @@
+import 'package:app_navigation_pattern/widgets/app_bar_widget.dart';
 import 'package:flutter/material.dart';
 
 class LaunchPage extends StatefulWidget {
@@ -11,10 +12,7 @@ class _LaunchPageState extends State<LaunchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: const Text('LaunchPage'),
-      ),
+      appBar: AppBarWidget(),
     );
   }
 }
