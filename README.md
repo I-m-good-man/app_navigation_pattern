@@ -1,16 +1,7 @@
-# app_navigation_pattern
+# App navigation template.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This Flutter project contains a template for building basic navigation in the application.<br>
+<br>The following technologies are used in this navigation template:
+<li>Router</li>
+<li>Navigator 2.0</li>
+<li>Riverpod</li>
